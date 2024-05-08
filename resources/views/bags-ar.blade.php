@@ -44,6 +44,12 @@
             bottom: 0px;
             width: 100%;
         }
+
+        .navbar {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+        }
     </style>
 </head>
 
@@ -59,16 +65,16 @@
                 English
             </a>
         </nav>
-        <div class="header mb-3 mt-5 d-flex justify-content-center">
+        <div class="header mb-2 mt-3 d-flex justify-content-center">
             <div class="logo ">
-                <img  src="{{ asset('logo_color.png') }}" style="height: 100px" alt="">
+                <img  src="{{ asset('logo_color.png') }}" style="height: 80px" alt="">
             </div>
         </div>
         <section class="mt-5">
             <div class="d-flex justify-content-center">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
             </div>
-            <div class="" style="text-align: center; font-size:3rem;"> اطبع حقيبتك بخط قطر</div>
+            <div class="" style="text-align: center; font-size:2rem;"> اطبع حقيبتك بخط قطر</div>
             <div class="d-flex justify-content-center mb-5">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
             </div>
@@ -207,14 +213,14 @@
                             title: "هناك خطأ ما",
                             text: errorMsg,
                             icon: "error",
-                            confirmButtonText 'تم'
+                            confirmButtonText :'تم'
                         })
                     } else {
                         Swal.fire({
                             title: "تم بنجاح",
                             text: 'تم تقديم الطلب بنجاح',
                             icon: "success",
-                            confirmButtonText 'تم'
+                            confirmButtonText: 'تم'
                         });
                         form.reset()
                         $('#bagModal').modal('hide')
