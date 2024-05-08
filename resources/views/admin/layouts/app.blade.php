@@ -53,13 +53,13 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item active">
+                            {{-- <li class="nav-item active">
                                 <a style="color: white !important" class="nav-link" href="/admin/dashboard">Books
                                     List</span></a>
                             </li>
                             <li class="nav-item ">
                                 <a style="color: white !important" class="nav-link mr-3" href="/admin/orders">Orders</a>
-                            </li>
+                            </li> --}}
 
                             <li class="nav-item flex ml-5">
 
