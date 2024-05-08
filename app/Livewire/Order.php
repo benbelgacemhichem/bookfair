@@ -17,13 +17,13 @@ class Order extends Component
     public $orderStatus = [];
 
     public function mount() {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->get();
+        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get();
         $this->orderStatus = $this->orders->pluck('status')->toArray();
     }
 
     public function render()
     {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->get();
+        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get();
         return view('livewire.order', ['orders' => $this->orders]);
     }
 
