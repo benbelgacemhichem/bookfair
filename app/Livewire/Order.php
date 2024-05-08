@@ -27,11 +27,11 @@ class Order extends Component
         return view('livewire.order', ['orders' => $this->orders]);
     }
 
-    #[On('echo:orders,OrderPrint')]
-    public function showOrder($orderId) {
-        dd(1);
-        $this->orders = Visitor::with('book')->get();
-    }
+    // #[On('echo:orders,OrderPrint')]
+    // public function showOrder($orderId) {
+    //     dd(1);
+    //     $this->orders = Visitor::with('book')->get();
+    // }
 
     public function getOrderId($id){
         $this->orderCanceledMsg = '';

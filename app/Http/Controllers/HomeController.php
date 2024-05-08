@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\OrderPrint;
 use App\Models\Book;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
@@ -54,7 +53,7 @@ class HomeController extends Controller
             $visitor->type = 'Book';
             $visitor->status = 'submitted';
             $visitor->save();
-            event(new OrderPrint($visitor->id));
+            // event(new OrderPrint($visitor->id));
             return response()->json(['success' => 'You are registered successfully!' ]);
         }
     }
@@ -78,7 +77,7 @@ class HomeController extends Controller
             $visitor->bag_content = $request->bag_content;
             $visitor->status = 'submitted';
             $visitor->save();
-            event(new OrderPrint($visitor->id));
+            // event(new OrderPrint($visitor->id));
             return response()->json(['success' => 'Bag registered successfully!' ]);
         }
     }
