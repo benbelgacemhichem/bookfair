@@ -29,6 +29,8 @@ class LoginController extends Controller
     {
         $credentials = $request->only('email', 'password');
 
+        
+
         if (Auth::attempt($credentials)) {
             if (!auth()->user()->admin) {
                 return redirect()->intended('home');
@@ -36,6 +38,9 @@ class LoginController extends Controller
             else if (auth()->user() && auth()->user()->admin) {
                 return redirect()->intended('admin/orders');
             } 
-        }
+            
+        } 
+        return redirect()->back();
+
     }
 }
