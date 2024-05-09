@@ -3,11 +3,15 @@
 namespace App\Livewire;
 
 use App\Models\Visitor;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class Order extends Component
 {
+
+    use LivewireAlert;
 
     public $orders = [];
     public $selectedOrder = '';
@@ -30,6 +34,7 @@ class Order extends Component
     #[On('echo:orders,OrderPrint')]
     public function showOrder($orderId) {
         $this->orders = Visitor::with('book')->get();
+        $this->alert('success', 'New order submitted');
     }
 
     public function getOrderId($id){
