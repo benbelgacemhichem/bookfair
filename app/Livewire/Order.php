@@ -29,7 +29,6 @@ class Order extends Component
 
     #[On('echo:orders,OrderPrint')]
     public function showOrder($orderId) {
-        dd(1);
         $this->orders = Visitor::with('book')->get();
     }
 
