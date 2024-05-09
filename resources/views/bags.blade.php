@@ -80,7 +80,23 @@
         </section>
 
         <section class="highlights">
-            <div class="row m-0 justify-content-center">
+            <div class="d-flex d-flex justify-content-center" style="text-align: center;">
+                <div class="m-5">
+                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
+                        <div class="card">
+                            <img class="card-img-top book-img" src="{{ asset('ps-01.png') }}" style="height: 300px; width: 500px" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="m-5">
+                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
+                        <div class="card ">
+                            <img class="card-img-top book-img" src="{{ asset('ps-02.png') }}" style="height: 300px; width: 500px" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{-- <div class="row m-0 justify-content-center">
                 <div class="col-lg-2 col-md-4 col-12 mb-4">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
                         <div class="card">
@@ -95,7 +111,7 @@
                         </div>
                     </a>
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="row m-0 justify-content-center">
                 <div class="col-lg-2 col-md-4 col-12 mb-4">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 3')">
