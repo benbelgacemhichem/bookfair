@@ -84,19 +84,19 @@
                 <div class="col-lg-2 col-md-4 col-12 mb-4">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
                         <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('b1.png') }}" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('ps-01.png') }}" alt="Card image cap">
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-12 mb-4">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
                         <div class="card ">
-                            <img class="card-img-top book-img" src="{{ asset('b2.png') }}" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('ps-02.png') }}" alt="Card image cap">
                         </div>
                     </a>
                 </div>
             </div>
-            <div class="row m-0 justify-content-center">
+            {{-- <div class="row m-0 justify-content-center">
                 <div class="col-lg-2 col-md-4 col-12 mb-4">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 3')">
                         <div class="card">
@@ -111,7 +111,7 @@
                         </div>
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </section>
 
         {{-- Modal --}}
