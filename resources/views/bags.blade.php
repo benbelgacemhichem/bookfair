@@ -63,9 +63,9 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/6133/6133973.png" alt="" style="width: 40px; height: 35px">
             </a>
         </nav>
-        <div class="header mb-2 mt-3 d-flex justify-content-center">
+        <div class="header mb-2 mt-5 d-flex justify-content-center">
             <div class="logo ">
-                <img  src="{{ asset('logo_color.png') }}" style="height: 80px" alt="">
+                <img  src="{{ asset('logo_color.png') }}" style="height: 90px" alt="">
             </div>
         </div>
 
@@ -81,17 +81,24 @@
 
         <section class="highlights">
             <div class="d-flex d-flex justify-content-center" style="text-align: center;">
-                <div class="m-5">
+                <div class="m-2">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
                         <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('ps-01.png') }}" style="height: 300px; width: 500px" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-01.png') }}" style="height: 280px; width: 450px" alt="Card image cap">
                         </div>
                     </a>
                 </div>
-                <div class="m-5">
+                <div class="m-2">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
                         <div class="card ">
-                            <img class="card-img-top book-img" src="{{ asset('ps-02.png') }}" style="height: 300px; width: 500px" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-02.png') }}" style="height: 280px; width: 450px" alt="Card image cap">
+                        </div>
+                    </a>
+                </div>
+                <div class="m-2">
+                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
+                        <div class="card ">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-03.png') }}" style="height: 280px; width: 450px" alt="Card image cap">
                         </div>
                     </a>
                 </div>
