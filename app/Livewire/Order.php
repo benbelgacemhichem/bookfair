@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Visitor;
+use Carbon\Carbon;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\On;
 use Livewire\Component;
@@ -21,19 +22,27 @@ class Order extends Component
     public $orderStatus = [];
 
     public function mount() {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get();
+        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+            return $item->created_at->format('Y-m-d');
+        });
+    
         $this->orderStatus = $this->orders->pluck('status')->toArray();
     }
 
     public function render()
     {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get();
+        $this->orders = collect(Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+            return $item->created_at->format('Y-m-d');
+        }));
+
         return view('livewire.order', ['orders' => $this->orders]);
     }
 
     #[On('echo:orders,OrderPrint')]
     public function showOrder($orderId) {
-        $this->orders = Visitor::with('book')->get();
+        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+            return $item->created_at->format('Y-m-d');
+        });
         $this->alert('success', 'New order submitted');
     }
 
