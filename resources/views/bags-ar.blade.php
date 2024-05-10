@@ -77,13 +77,13 @@
             <div class="d-flex justify-content-center">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
             </div>
-            <div class="" style="text-align: center; font-size:2rem;"> اطبع حقيبتك بخط قطر</div>
+            <div class="" style="text-align: center; font-size:3rem;"> اطبع حقيبتك بخط قطر</div>
             <div class="d-flex justify-content-center mb-5">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
             </div>
         </section>
 
-        <section class="highlights">
+        <section class="highlights mt-3">
             <div class="d-flex d-flex justify-content-center" style="text-align: center;">
                 <div class="m-2">
                     <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
@@ -100,7 +100,7 @@
                     </a>
                 </div>
                 <div class="m-2">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
+                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 3')">
                         <div class="card ">
                             <img class="card-img-top book-img" src="{{ asset('a4_print-03.png') }}" style="height: 400px; width: 600px" alt="Card image cap">
                         </div>
