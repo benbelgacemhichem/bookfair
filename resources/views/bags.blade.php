@@ -64,8 +64,8 @@
             </a>
         </nav>
         <div class="header mb-2 mt-5 d-flex justify-content-center">
-            <div class="logo mt-3 ">
-                <img  src="{{ asset('logo_color.png') }}" style="height: 100px" alt="">
+            <div class="logo mt-5 ">
+                <img  src="{{ asset('logo_color.png') }}" style="height: 150px" alt="">
             </div>
         </div>
         
