@@ -22,9 +22,9 @@ class Order extends Component
     public $orderStatus = [];
 
     public function mount() {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+        $this->orders = collect(Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
             return $item->created_at->format('Y-m-d');
-        });
+        }));
     
         $this->orderStatus = $this->orders->pluck('status')->toArray();
     }
@@ -40,9 +40,10 @@ class Order extends Component
 
     #[On('echo:orders,OrderPrint')]
     public function showOrder($orderId) {
-        $this->orders = Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+        $this->orders = collect(Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
             return $item->created_at->format('Y-m-d');
-        });
+        }));
+
         $this->alert('success', 'New order submitted');
     }
 
