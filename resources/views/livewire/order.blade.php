@@ -74,6 +74,7 @@
                                 <p class="card-text">Vistor name: {{ $order->full_name }}</p>
                                 <p class="card-text">Vistor phone: {{ $order->phone_number }}</p>
                                 <p class="card-text">Vistor email: {{ $order->email }}</p>
+                                <p class="card-text">Order Time: {{ $order->created_at->format('d/m/Y - H:i') }}</p>
                                 <h3 class="card-text">Content: <span
                                         style="color:blue">"{{ $order->bag_content }}"</span></h3>
                             </div>
