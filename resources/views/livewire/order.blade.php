@@ -45,7 +45,7 @@
         <div class="row w-100 m-0 ">
             @foreach ($orders as $key => $orders_list)
                 <div>
-                    <h3>Date: {{ $key }}</h3>
+                    <h3>Date: {{ $key }} ({{ $orders_list->count() }})</h3>
                 </div>
                 @foreach ($orders_list as $key => $order)
                     <div class="col-lg-3 col-md-3 col-sm-3 mb-4 d-flex align-items-stretch"
