@@ -25,3 +25,4 @@ Route::get('/admin/dashboard', [App\Http\Controllers\AdminController::class, 'in
 Route::get('/admin/new_book', [App\Http\Controllers\AdminController::class, 'newBook'])->name('admin.new-book');
 Route::get('/admin/orders', [App\Http\Controllers\AdminController::class, 'orders'])->name('admin.orders');
 Route::post('/admin/add_book', [App\Http\Controllers\AdminController::class, 'addBook'])->name('admin.add-book');
+Route::get('/bags/status/update', [App\Http\Controllers\HomeController::class, 'active']);

@@ -43,6 +43,7 @@
             bottom: 0px;
             width: 100%;
         }
+
         .navbar {
             position: fixed;
             top: 30px;
@@ -60,82 +61,60 @@
         <nav class="navbar navbar-expand-lg bg-transparent justify-content-end">
             <a class="navbar-brand fw-bold" href="{{ route('bags', 'ar') }}">
                 العربية
-                <img src="https://cdn-icons-png.flaticon.com/512/6133/6133973.png" alt="" style="width: 40px; height: 35px">
+                <img src="https://cdn-icons-png.flaticon.com/512/6133/6133973.png" alt=""
+                    style="width: 40px; height: 35px">
             </a>
         </nav>
         <div class="header mb-2 mt-5 d-flex justify-content-center">
             <div class="logo mt-5 ">
-                <img  src="{{ asset('logo_color.png') }}" style="height: 150px" alt="">
+                <img src="{{ asset('logo_color.png') }}" style="height: 150px" alt="">
             </div>
         </div>
-        
+
 
         <section class="mt-5">
             <div class="d-flex justify-content-center">
-                <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
+                <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"
+                    alt="">
             </div>
             <div class="" style="text-align: center; font-size:3rem;">Print your bag with Qatar font</div>
             <div class="d-flex justify-content-center mb-5">
-                <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"  alt="">
+                <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"
+                    alt="">
             </div>
         </section>
 
         <section class="highlights  mt-3">
+
             <div class="d-flex d-flex justify-content-center" style="text-align: center;">
                 <div class="m-2">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
+                    <a href="" data-toggle="modal" data-target="{{ $active ? '#bagModal' : '' }}"
+                        onclick="selectBag('Bag 1', {{ $active }})">
                         <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('a4_print-01.png') }}" style="height: 400px; width: 600px" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-01.png') }}"
+                                style="height: 400px; width: 600px" alt="Card image cap">
                         </div>
                     </a>
                 </div>
                 <div class="m-2">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
+                    <a href="" data-toggle="modal" data-target="{{ $active ? '#bagModal' : '' }}"
+                        onclick="selectBag('Bag 2', {{ $active }})">
                         <div class="card ">
-                            <img class="card-img-top book-img" src="{{ asset('a4_print-02.png') }}" style="height: 400px; width: 600px" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-02.png') }}"
+                                style="height: 400px; width: 600px" alt="Card image cap">
                         </div>
                     </a>
                 </div>
                 <div class="m-2">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 3')">
+                    <a href="" data-toggle="modal" data-target="{{ $active ? '#bagModal' : '' }}"
+                        onclick="selectBag('Bag 3', {{ $active }})">
                         <div class="card ">
-                            <img class="card-img-top book-img" src="{{ asset('a4_print-03.png') }}" style="height: 400px; width: 600px" alt="Card image cap">
+                            <img class="card-img-top book-img" src="{{ asset('a4_print-03.png') }}"
+                                style="height: 400px; width: 600px" alt="Card image cap">
                         </div>
                     </a>
                 </div>
             </div>
-            {{-- <div class="row m-0 justify-content-center">
-                <div class="col-lg-2 col-md-4 col-12 mb-4">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 1')">
-                        <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('ps-01.png') }}" alt="Card image cap">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-12 mb-4">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 2')">
-                        <div class="card ">
-                            <img class="card-img-top book-img" src="{{ asset('ps-02.png') }}" alt="Card image cap">
-                        </div>
-                    </a>
-                </div>
-            </div> --}}
-            {{-- <div class="row m-0 justify-content-center">
-                <div class="col-lg-2 col-md-4 col-12 mb-4">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 3')">
-                        <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('b3.png') }}" alt="Card image cap">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-2 col-md-4 col-12 mb-4">
-                    <a href="" data-toggle="modal" data-target="#bagModal" onclick="selectBag('Bag 4')">
-                        <div class="card">
-                            <img class="card-img-top book-img" src="{{ asset('b4.png') }}" alt="Card image cap">
-                        </div>
-                    </a>
-                </div>
-            </div> --}}
         </section>
 
         {{-- Modal --}}
@@ -154,12 +133,14 @@
                         <div class="modal-body">
                             <div class="row mb-3">
                                 <div class="col-md-12">
-                                    <h5 class="text-center text-dark"><strong>Please enter the information to complete the request</strong></h5>
+                                    <h5 class="text-center text-dark"><strong>Please enter the information to complete
+                                            the request</strong></h5>
                                 </div>
                             </div>
                             <input type="hidden" id="bag-style-input" name="bag_style">
                             <div class="row mb-3">
-                                <div class="col-md-3"><label>Full name<small class="text-danger">*</small></label></div>
+                                <div class="col-md-3"><label>Full name<small class="text-danger">*</small></label>
+                                </div>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="name" required>
                                 </div>
@@ -171,13 +152,15 @@
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-3"><label>Phone number<small class="text-danger">*</small></label></div>
+                                <div class="col-md-3"><label>Phone number<small class="text-danger">*</small></label>
+                                </div>
                                 <div class="col-md-9">
                                     <input type="number" class="form-control" name="phone" required>
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <div class="col-md-3"><label>Bag text<small class="text-danger">*</small></label></div>
+                                <div class="col-md-3"><label>Bag text<small class="text-danger">*</small></label>
+                                </div>
                                 <div class="col-md-9">
                                     <textarea class="form-control" name="bag_content" rows="4" required>
 
@@ -206,11 +189,19 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
-
-        function selectBag(title) {
-            document.getElementById('bag-style-input').value = title;
-            let modalTitle = document.querySelector('.modal-title');
-            modalTitle.innerHTML = `<strong> ${title} </strong>`
+        function selectBag(title, active) {
+            if (active == 0) {
+                Swal.fire({
+                    title: "Sorry",
+                    text: 'We cannot process your request at this time. Please try again later',
+                    icon: "warning",
+                })
+                $('#bagModal').modal('hide')
+            } else {
+                document.getElementById('bag-style-input').value = title;
+                let modalTitle = document.querySelector('.modal-title');
+                modalTitle.innerHTML = `<strong> ${title} </strong>`
+            }
         }
 
         $('#submit-btn').click(function(e) {

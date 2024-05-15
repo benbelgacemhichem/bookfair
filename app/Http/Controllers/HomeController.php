@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\OrderPrint;
 use App\Models\Book;
+use App\Models\User;
 use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -29,12 +30,21 @@ class HomeController extends Controller
 
     public function bags($lang)
     {
+        $active = auth()->user()->is_active;
+
         if($lang == 'en'){
-            return view('bags');
+            return view('bags', compact('active'));
         }else{
-            return view('bags-ar');
+            return view('bags-ar', compact('active'));
         }
 
+    }
+
+    public function active()
+    {
+        User::query()->update(['is_active' => !auth()->user()->is_active]);
+        $status = !auth()->user()->is_active;
+        return view('update', compact('status'));
     }
 
     public function book_submit(Request $request){
