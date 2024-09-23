@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link href=
         "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Bags</title>
@@ -54,9 +53,6 @@
 
 <body>
     @include('sweetalert::alert')
-    <div class="btm d-flex justify-content-center">
-        <img src="{{ asset('elements.png') }}" alt="">
-    </div>
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-transparent justify-content-end">
             <a class="navbar-brand fw-bold" href="{{ route('bags', 'ar') }}">
@@ -70,8 +66,6 @@
                 <img src="{{ asset('logo_color.png') }}" style="height: 150px" alt="">
             </div>
         </div>
-
-
         <section class="mt-5">
             <div class="d-flex justify-content-center">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png') }}"

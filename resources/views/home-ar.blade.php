@@ -58,10 +58,10 @@
     @include('sweetalert::alert')
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg bg-transparent justify-content-start">
-            <a class="navbar-brand fw-bold" href="{{ route('home', 'ar') }}">
+            <a class="navbar-brand fw-bold" href="{{ route('home', 'en') }}">
                 <img src="https://cdn-icons-png.flaticon.com/512/6133/6133973.png" alt=""
                     style="width: 40px; height: 35px">
-                العربية
+                English
             </a>
         </nav>
 
@@ -75,7 +75,7 @@
             <div class="d-flex justify-content-center">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png')}}" alt="">
             </div>
-            <div class="" style="text-align: center; font-size:3rem;">Print your book</div>
+            <div class="" style="text-align: center; font-size:3rem;">اطبع كتابك</div>
             <div class="d-flex justify-content-center mb-5">
                 <img class="d-flex justify-content-center" style="height: 30px" src="{{ asset('sp.png')}}" alt="">
             </div>

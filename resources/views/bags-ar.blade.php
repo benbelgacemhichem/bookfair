@@ -58,9 +58,9 @@
 
 <body>
     @include('sweetalert::alert')
-    <div class="btm d-flex justify-content-center">
+    {{-- <div class="btm d-flex justify-content-center">
         <img src="{{ asset('elements.png') }}" alt="">
-    </div>
+    </div> --}}
     <div class="container-fluid ">
         <nav class="navbar navbar-expand-lg bg-transparent justify-content-start">
             <a class="navbar-brand fw-bold" href="{{ route('bags', 'en') }}">
@@ -69,7 +69,6 @@
                 English
             </a>
         </nav>
-
 
         <div class="header mb-2 mt-5 d-flex justify-content-center">
             <div class="logo mt-5 ">

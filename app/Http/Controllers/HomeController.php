@@ -22,10 +22,15 @@ class HomeController extends Controller
     }
 
 
-    public function index()
+    public function index($lang)
     {
         $books = Book::all();
-        return view('home', compact('books'));
+
+        if($lang == 'en'){
+            return view('home', compact('books'));
+        }else{
+            return view('home-ar', compact('books'));
+        }
     }
 
     public function bags($lang)
