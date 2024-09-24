@@ -117,7 +117,7 @@
             <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title"><strong> Book </strong></h5>
+                        <h5 class="modal-title"><strong> BAG </strong></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -184,6 +184,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript">
         function selectBag(title, active) {
+        console.log(title, active);
             if (active == 0) {
                 Swal.fire({
                     title: "Sorry",

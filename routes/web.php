@@ -1,7 +1,21 @@
 <?php
 
+use App\Imports\VisitorsImport;
+use App\Models\Visitor;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
+
+
+// Route::get('/import', function(Request $request) {
+//     return view('import');
+// });
+// Route::post('/import', function(Request $request) {
+//     // dd($request->file());
+//     Excel::import(new VisitorsImport(), $request->file('file'));
+//     return response()->json(['data'=>'Users imported successfully.',201]);
+// });
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,3 +41,5 @@ Route::get('/admin/new_book', [App\Http\Controllers\AdminController::class, 'new
 Route::get('/admin/orders', [App\Http\Controllers\AdminController::class, 'orders'])->name('admin.orders');
 Route::post('/admin/add_book', [App\Http\Controllers\AdminController::class, 'addBook'])->name('admin.add-book');
 Route::get('/bags/status/update', [App\Http\Controllers\HomeController::class, 'active']);
+
+
