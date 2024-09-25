@@ -38,7 +38,7 @@ class Order extends Component
         return view('livewire.order', ['orders' => $this->orders]);
     }
 
-    #[On('echo:orders,OrderPrint')]
+    // #[On('echo:orders,OrderPrint')]
     public function showOrder($orderId) {
         $this->orders = collect(Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
             return $item->created_at->format('Y-m-d');
@@ -61,8 +61,8 @@ class Order extends Component
         $this->orderCanceledMsg = 'the order has been cancelled';
     }
 
-    public function proceedOrder(){
-        $order = Visitor::where('id', $this->selectedOrder)->first();
+    public function proceedOrder($id){
+        $order = Visitor::where('id', $id)->first();
         $order->status = 'printing';
         $order->save();
         $this->orderPrintingMsg = 'Printing is in progress';

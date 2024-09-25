@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataTables\BooksDataTable;
 use App\Models\Book;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -25,7 +26,12 @@ class AdminController extends Controller
 
     public function orders()
     {
-        return view('admin.orders');
+
+        $orders = collect(Visitor::where('type', 'Bag')->with('book')->orderBy('id', 'desc')->get()->groupBy(function ($item) {
+            return $item->created_at->format('Y-m-d');
+        }));
+        $orderStatus = $orders->pluck('status')->toArray();
+        return view('admin.orders', ['orders' => $orders, 'orderStatus' => $orderStatus]);
     }
     
     public function addBook(Request $request)
